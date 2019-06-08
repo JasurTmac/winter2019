@@ -1,0 +1,12 @@
+---
+- hosts: web
+  vars:
+    http_port: 80
+    max_clients: 200
+  remote_user: ansible  
+  become: yes
+  tasks:
+  - name: ensure apache is at the latest version
+    yum:
+      name: httpd
+      state: latest
